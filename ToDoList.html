@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+</head>
+    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <script src="angular.js"></script>
+    <script src="node_modules/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="myApp.js"></script>
+    <script src="myCtrl.js"></script>
+    <style>
+        .container
+        {
+            background-color: lightblue;
+        }
+        body
+        {
+            background-color: grey;
+        }
+        h1
+        {
+            padding-left: 50px;
+        }
+    </style>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-4">
+            <h1 class="label-primary"> To Do List </h1>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-offset-4" ng-controller="myCtrl" ng-submit="add()">
+             <form>
+               <input id="task" ng-model="todo" type="text" placeholder="Task to do..."/>
+               <input id="add" class="btn-success" type="submit" value="Add To List"/>
+               <input id="clear" class="btn-danger" ng-click="clear()" type="reset" value="Clear All"/>
+             </form>
+             {{localStorageDemoValue}}
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>
